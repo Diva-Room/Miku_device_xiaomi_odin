@@ -433,10 +433,28 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.ims.xml \
     frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.sip.voip.xml
 
+# Perf 
+PRODUCT_BOOT_JARS += \
+    QPerformance \
+    UxPerformance
+
+# Perf (TensorFlow)
+PRODUCT_PACKAGES += \
+    libtflite
+
+# PSI
+PRODUCT_PACKAGES += \
+    libpsi.vendor
+
 # Thermal
 PRODUCT_PACKAGES += \
-    android.hardware.thermal@2.0-service.qti \
-    android.hardware.thermal@2.0
+    android.hardware.thermal@2.0 \
+    android.hardware.thermal@2.0.vendor \
+    android.hardware.thermal@2.0-service.qti
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/android/permissions/boost-framework/com.qualcomm.qti.Performance.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.qualcomm.qti.Performance.xml \
+	$(LOCAL_PATH)/android/permissions/boost-framework/com.qualcomm.qti.UxPerformance.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.qualcomm.qti.UxPerformance.xml
 
 # Touchscreen
 PRODUCT_COPY_FILES += \

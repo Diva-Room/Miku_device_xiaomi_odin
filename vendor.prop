@@ -1,3 +1,10 @@
+# Perf
+ro.vendor.extension_library=libqti-perfd-client.so
+ro.vendor.perf-hal.ver=2.2
+ro.vendor.perf.scroll_opt=1
+ro.vendor.qspm.enable=true
+vendor.power.pasr.enabled=false
+
 #
 # from device/xiaomi/odin/special_ro.prop
 # enable wifi passpoint r1
@@ -557,7 +564,6 @@ ro.vendor.audio.voice.change.version=1
 ro.incremental.enable=yes
 persist.radio.multisim.config=dsds
 persist.vendor.qfp=false
-ro.vendor.qspm.enable=true
 persist.vendor.radio.enableadvancedscan=true
 persist.sys.qseelogd=true
 drm.service.enabled=true
@@ -605,9 +611,6 @@ vendor.display.enable_early_wakeup=1
 persist.vendor.dpmhalservice.enable=1
 ro.crypto.dm_default_key.options_format.version=2
 ro.crypto.volume.metadata.method=dm-default-key
-ro.vendor.extension_library=libqti-perfd-client.so
-ro.vendor.perf-hal.ver=2.2
-ro.vendor.perf.scroll_opt=1
 persist.vendor.sensors.sync_request=true
 persist.vendor.sensors.allow_non_default_discovery=true
 persist.vendor.sensors.on_change_sample_period=true
