@@ -277,7 +277,6 @@ vendor/lib/libcamxtintlessalgo.so
 vendor/lib/libjpege.so
 vendor/lib/libmctfengine_stub.so
 vendor/lib/libmialgo_ai_vision.so
-vendor/lib/libmialgoengine.so
 vendor/lib/libmmcamera_bestats.so
 vendor/lib/libmmcamera_cac3.so
 vendor/lib/libmmcamera_faceproc.so;DISABLE_CHECKELF
