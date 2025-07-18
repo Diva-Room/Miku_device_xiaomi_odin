@@ -258,11 +258,10 @@ vendor/etc/camera/xiaomi/thirdpartyjpegsnapshot.json
 vendor/etc/camera/xiaomi/thirdpartysnapshot.json
 vendor/firmware/CAMERA_ICP.elf
 vendor/firmware/CAMERA_ICP_170.elf
-vendor/lib/com.qti.settings.sm8350.so
 vendor/lib/libaidenoiserv2.so
+vendor/lib/libbitmlengine.so
 vendor/lib/libbitmlenginev2.so
 vendor/lib/libcamera_nn_stub.so
-vendor/lib/libcamerapostproc.so
 vendor/lib/libcamlog.so
 vendor/lib/libcamxexternalformatutils.so
 vendor/lib/libcamxfacialfeatures.so
@@ -293,6 +292,8 @@ vendor/lib/libcom.xiaomi.debug.so
 vendor/lib/libcom.xiaomi.grallocutils.so
 vendor/lib/libcom.xiaomi.metadatautils.so
 vendor/lib/libcom.xiaomi.pluginutils.so
+vendor/lib/vendor.xiaomi.hardware.cameraperf@1.0-impl.so
+vendor/lib/vendor.xiaomi.hardware.cameraperf@1.0.so
 vendor/lib64/camera/com.qti.eeprom.odin_ofilm_ov13b10_gt24p64b_ultra_eeprom.so
 vendor/lib64/camera/com.qti.eeprom.odin_semco_s5khmx_p24c128f_wide_eeprom.so
 vendor/lib64/camera/com.qti.eeprom.odin_sunny_hi847_gt24p128c_tele5x_eeprom.so
@@ -450,6 +451,7 @@ vendor/lib64/com.qualcomm.mcx.distortionmapper.so
 vendor/lib64/com.qualcomm.mcx.linearmapper.so
 vendor/lib64/com.qualcomm.mcx.policy.mfl.so
 vendor/lib64/com.qualcomm.qti.mcx.usecase.extension.so
+vendor/lib64/HDR10plus.so
 vendor/lib64/hw/camera.qcom.so
 vendor/lib64/hw/camera.xiaomi.so
 vendor/lib64/hw/com.qti.chi.override.so
@@ -465,11 +467,19 @@ vendor/lib64/libalAILDC.so;DISABLE_CHECKELF
 vendor/lib64/libalCFR.so
 vendor/lib64/libalLDC.so;DISABLE_CHECKELF
 vendor/lib64/libalhLDC.so;DISABLE_CHECKELF
-vendor/lib64/libanc_dc_base.so
-vendor/lib64/libanc_dc_plugin_xiaomi_v2.so;DISABLE_CHECKELF
-vendor/lib64/libanc_hdr.so
+vendor/lib64/libancbase_cap.so
+vendor/lib64/libancbase_rt.so
 vendor/lib64/libancbase.so
+vendor/lib64/libanc_dc_base.so
+vendor/lib64/libanc_dc_plugin_xiaomi_v2.so
+vendor/lib64/libanc_hdr.so
+vendor/lib64/libanc_superiq.so
+vendor/lib64/libarcsoft_beautyshot.so
+vendor/lib64/libarcsoft_bodyslim.so
+vendor/lib64/libarcsoft_distortion_correction.so
 vendor/lib64/libarcsoft_hdrplus_hvx_stub.so;DISABLE_CHECKELF
+vendor/lib64/libarcsoft_portrait_lighting_c.so
+vendor/lib64/libarcsoft_portrait_lighting.so
 vendor/lib64/libarcsoft_qnnhtp.so
 vendor/lib64/libarcsoft_super_night_raw.so;DISABLE_CHECKELF
 vendor/lib64/libbitmlengine.so
@@ -480,6 +490,7 @@ vendor/lib64/libcamera_nn_stub.so
 vendor/lib64/libcamera_scene.so
 vendor/lib64/libcamera_scene_dxo.so
 vendor/lib64/libcamerapostproc.so
+vendor/lib64/libcamlog.so
 vendor/lib64/libcamxexternalformatutils.so
 vendor/lib64/libcamxfacialfeatures.so
 vendor/lib64/libcamxfdalgo.so
@@ -497,6 +508,7 @@ vendor/lib64/libcom.xiaomi.debug.so
 vendor/lib64/libcom.xiaomi.grallocutils.so
 vendor/lib64/libcom.xiaomi.metadatautils.so
 vendor/lib64/libcom.xiaomi.pluginutils.so
+vendor/lib64/libcup_preview.so
 vendor/lib64/libcvface_api.so
 vendor/lib64/libfocus.so
 vendor/lib64/libhdrdynamic.so
@@ -509,6 +521,7 @@ vendor/lib64/libmctfengine_stub.so
 vendor/lib64/libmegface.so
 vendor/lib64/libmiStereoFactoryRemapBasicLib.so
 vendor/lib64/libmiStereoFactoryRemapLib_v2.so;FIX_SONAME
+vendor/lib64/libmiai_deblur.so
 vendor/lib64/libmiai_portraitsupernight.so
 vendor/lib64/libmialgo_ai_vision.so
 vendor/lib64/libmialgo_basic.so
@@ -524,6 +537,7 @@ vendor/lib64/libmialgo_video_colourkeeping.so
 vendor/lib64/libmialgo_video_enhance.so
 vendor/lib64/libmialgo_video_seg_depth.so
 vendor/lib64/libmialgoengine.so
+vendor/lib64/libmibokeh_845_video.so
 vendor/lib64/libmibokeh_855.so
 vendor/lib64/libmibokeh_mask.so
 vendor/lib64/libmibokeh_mask_dsp.so
@@ -548,11 +562,13 @@ vendor/lib64/libportrait_blur.so
 vendor/lib64/libqll10.so
 vendor/lib64/libqllengine.so;DISABLE_CHECKELF
 vendor/lib64/librelight_only.so
-vendor/lib64/libremosaic_wrapper.so
+vendor/lib64/libremosaichvx_stub.so
 vendor/lib64/libremosaiclib.so
+vendor/lib64/libremosaic_wrapper.so
 vendor/lib64/libsdk_sr.so
 vendor/lib64/libsnpe_dsp_domains_v2.so
 vendor/lib64/libsnpe_dsp_domains_v3.so
+vendor/lib64/libsupermoon.so
 vendor/lib64/libswregistrationalgo.so
 vendor/lib64/libsynx.so
 vendor/lib64/libtfestriping.so
@@ -567,6 +583,8 @@ vendor/lib64/libxmi_hdr_bokeh.so
 vendor/lib64/libxmi_hdr_checker.so
 vendor/lib64/libxmi_high_dynamic_range.so
 vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so
+vendor/lib64/vendor.xiaomi.hardware.cameraperf@1.0-impl.so
+vendor/lib64/vendor.xiaomi.hardware.cameraperf@1.0.so
 vendor/lib64/vendor.xiaomi.hardware.campostproc@1.0-service-impl.so
 vendor/lib64/vendor.xiaomi.hardware.campostproc@1.0.so
 
@@ -1377,6 +1395,7 @@ vendor/etc/init/init.vendor.sensors.rc
 vendor/etc/init/vendor.sensors.qti.rc
 vendor/etc/init/vendor.sensors.sscrpcd.rc
 vendor/lib/libsnsapi.so;DISABLE_CHECKELF
+vendor/lib64/libclient2slpi.notifier.so
 vendor/lib64/libnanopb.so
 vendor/lib64/libnotifyaudiohal.so;FIX_SONAME
 vendor/lib64/libsensorcal.so;DISABLE_CHECKELF
@@ -1441,7 +1460,9 @@ vendor/etc/sensors/sns_reg_config
 vendor/bin/hw/vendor.xiaomi.hardware.citsensorservice@1.1-service
 vendor/etc/init/vendor.xiaomi.hardware.citsensorservice@1.1-service.rc
 vendor/etc/vintf/manifest/vendor.xiaomi.hardware.citsensorservice@1.1-service.xml
+vendor/lib64/hw/vendor.fs.fsalsps@1.0-impl.so
 vendor/lib64/hw/vendor.xiaomi.hardware.citsensorservice@1.1-impl.so
+vendor/lib64/vendor.fs.fsalsps@1.0.so
 vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.0.so
 vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.1.so
 
