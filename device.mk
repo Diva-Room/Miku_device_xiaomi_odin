@@ -32,8 +32,7 @@ PRODUCT_PACKAGES += \
 
 # ANT+
 PRODUCT_PACKAGES += \
-    AntHalService-Soong \
-    com.dsi.ant@1.0.vendor
+    AntHalService-Soong
 
 # Atrace
 PRODUCT_PACKAGES += \
@@ -120,9 +119,7 @@ PRODUCT_PACKAGES += \
     audio.bluetooth.default
 
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth.audio-impl \
-    vendor.qti.hardware.btconfigstore@1.0.vendor \
-    vendor.qti.hardware.btconfigstore@2.0.vendor
+    android.hardware.bluetooth.audio-impl
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml \
@@ -154,8 +151,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
-    android.hardware.camera.provider@2.4-service_64 \
-    vendor.qti.hardware.camera.postproc@1.0.vendor
+    android.hardware.camera.provider@2.4-service_64
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/camera_cnf.txt:$(TARGET_COPY_OUT_VENDOR)/etc/camera/camera_cnf.txt
@@ -182,21 +178,10 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-service \
     vendor.qti.hardware.display.allocator-service \
     vendor.qti.hardware.display.composer-service \
-    vendor.qti.hardware.display.mapper@1.1.vendor \
-    vendor.qti.hardware.display.mapper@2.0.vendor
-
-PRODUCT_PACKAGES += \
-    vendor.display.config@1.15 \
-    vendor.display.config@1.15.vendor \
-    vendor.display.config@2.0 \
-    vendor.display.config@2.0.vendor
 
 PRODUCT_PACKAGES += \
     gralloc.default \
-    libdisplayconfig.system.qti \
-    libdisplayconfig.qti \
     libmemutils \
-    libqdMetaData \
     libqdMetaData.system \
     libtinyxml \
     memtrack.default
@@ -230,15 +215,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-service
 
-# HIDL
-$(foreach target, $(shell cat $(LOCAL_PATH)/vndk.txt), $(eval PRODUCT_PACKAGES += $(target).vendor))
-
-PRODUCT_PACKAGES += \
-    libhidltransport \
-    libhidltransport.vendor \
-    libhwbinder \
-    libhwbinder.vendor
-
 # IFAA manager
 PRODUCT_PACKAGES += \
     IFAAService
@@ -260,10 +236,6 @@ PRODUCT_PACKAGES += \
 
 # Media
 PRODUCT_PACKAGES += \
-    libavservices_minijail \
-    libavservices_minijail.vendor \
-    libavservices_minijail_vendor \
-    libcodec2_hidl@1.1.vendor \
     libcodec2_soft_common.vendor_32
 
 PRODUCT_COPY_FILES += \
@@ -298,9 +270,7 @@ PRODUCT_PACKAGES += \
 # NFC
 PRODUCT_PACKAGES += \
     android.hardware.nfc-service.nxp \
-    android.hardware.secure_element@1.2.vendor \
     com.android.nfc_extras \
-    libchrome.vendor \
     NfcNci \
     SecureElement \
     Tag
@@ -356,20 +326,12 @@ PRODUCT_PACKAGES += OdinParts
 PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
-# Perf
-PRODUCT_PACKAGES += \
-    vendor.qti.hardware.perf@2.3 \
-    vendor.qti.hardware.perf@2.3.vendor
-
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti
 
 # QMI
 PRODUCT_PACKAGES += \
-    libjson \
-    libqti_vndfwk_detect \
-    libqti_vndfwk_detect.vendor \
     libvndfwk_detect_jni.qti \
     libvndfwk_detect_jni.qti.vendor
 
@@ -393,14 +355,10 @@ PRODUCT_PACKAGES += \
 
 # RIL
 PRODUCT_PACKAGES += \
-    libprotobuf-cpp-full-3.9.1-vendorcompat \
-    libprotobuf-cpp-lite-3.9.1-vendorcompat \
-    librmnetctl \
     libxml2
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.frameworks.sensorservice@1.0.vendor \
     android.hardware.sensors@2.1-service.multihal.odin \
     libsensorndkbridge \
     sensors.xiaomi.udfps
