@@ -16,9 +16,6 @@ vendor.xiaomi.hardware.mlipay::IMlipayService                                   
 vendor.nxp.nxpnfc::INxpNfc                                                           u:object_r:hal_nfc_hwservice:s0
 
 #
-com.qxwz.account::IQxwzAccount                                                       u:object_r:vendor_qx_oss_hwservice:s0
-
-#
 vendor.fs.fsalsps::IFsAlsps                                                          u:object_r:vendor_hal_fsalsps_hwservice:s0
 
 #
