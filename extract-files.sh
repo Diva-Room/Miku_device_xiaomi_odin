@@ -106,6 +106,9 @@ function blob_fixup() {
             hexdump -ve '1/1 "%.2X"' "${2}" | sed "s/2100805229070094/210080521F2003D5/g" | xxd -r -p > "${EXTRACT_TMP_DIR}/${1##*/}"
             mv "${EXTRACT_TMP_DIR}/${1##*/}" "${2}"
             ;;
+        vendor/lib64/vendor.xiaomi.hardware.cameraperf@1.0-impl.so)
+            "${SIGSCAN}" -p "21 00 80 52 7c 00 00 94" -P "21 00 80 52 1F 20 03 D5" -f "${2}"
+            ;;
         vendor/lib64/hw/com.qti.chi.override.so)
             "${PATCHELF}" --add-needed "libprocessgroup_shim.so" "${2}"
             ;;
