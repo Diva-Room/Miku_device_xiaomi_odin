@@ -73,9 +73,6 @@ AB_OTA_PARTITIONS += \
 # Cust
 BOARD_ROOT_EXTRA_FOLDERS := cust
 
-# ANT+
-BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
-
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth/include
 
