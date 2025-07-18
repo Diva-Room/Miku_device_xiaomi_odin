@@ -12,7 +12,6 @@
 /vendor/bin/batterysecret                                                    u:object_r:batterysecret_exec:s0
 /vendor/bin/charge_logger                                                    u:object_r:charge_logger_exec:s0
 /data/vendor/charge_logger(/.*)?                                             u:object_r:vendor_charge_log_file:s0
-/sys/class/qcom-battery(/.*)?                                                u:object_r:vendor_sysfs_battery_supply:s0
 
 # Devices
 /dev/elliptic(.*)?                                                           u:object_r:sound_device:s0
