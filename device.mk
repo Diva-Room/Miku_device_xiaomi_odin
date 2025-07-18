@@ -170,19 +170,17 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@3.0-impl-qti-display \
     android.hardware.graphics.mapper@4.0-impl-qti-display \
-    android.hardware.memtrack@1.0-impl \
-    android.hardware.memtrack@1.0-service \
     vendor.qti.hardware.display.allocator-service \
     vendor.qti.hardware.display.composer-service \
     vendor.qti.hardware.display.composer-service.rc \
-    vendor.qti.hardware.display.composer-service.xml
+    vendor.qti.hardware.display.composer-service.xml \
+    vendor.qti.hardware.memtrack-service
 
 PRODUCT_PACKAGES += \
     gralloc.default \
     libmemutils \
     libqdMetaData.system \
-    libtinyxml \
-    memtrack.default
+    libtinyxml
 
 # DRM
 PRODUCT_PACKAGES += \
