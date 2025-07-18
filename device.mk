@@ -57,7 +57,6 @@ PRODUCT_PACKAGES += \
     libaudio-resampler \
     libbatterylistener \
     libbundlewrapper \
-    libcirrusspkrprot \
     libcomprcapture \
     libdownmix \
     libdynproc \
