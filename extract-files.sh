@@ -55,13 +55,29 @@ fi
 
 function blob_fixup() {
     case "${1}" in
+        system_ext/bin/wfdservice64)
+            "${PATCHELF}" --add-needed "libwfdservice_shim.so" "${2}"
+            ;;
+        system_ext/etc/init/wfdservice.rc)
+            sed -i 's/start wfdservice/start wfdservice64/g' "${2}"
+            sed -i 's/stop wfdservice/stop wfdservice64/g' "${2}"
+            ;;
+        system_ext/lib64/libwfdmmsrc_system.so)
+            "${PATCHELF}" --add-needed "libgui_shim.so" "${2}"
+            ;;
+        system_ext/lib64/libwfdservice.so)
+            [ "$2" = "" ] && return 0
+            "${PATCHELF}" --add-needed "libaudioclient_shim.so" "${2}"
+            "${PATCHELF}" --replace-needed "android.media.audio.common.types-V2-cpp.so" "android.media.audio.common.types-V4-cpp.so" "${2}"
+            "${PATCHELF}" --replace-needed "android.media.audio.common.types-V3-cpp.so" "android.media.audio.common.types-V4-cpp.so" "${2}"
+            ;;
+        system_ext/lib64/libwfdnative.so)
+            "${PATCHELF}" --add-needed "libbinder_shim.so" "${2}"
+            "${PATCHELF}" --add-needed "libinput_shim.so" "${2}"
+            ;;
         system_ext/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml|system_ext/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml)
             sed -i 's/version="2.0"/version="1.0"/g' "${2}"
             sed -i 's/system\/product/system_ext/g' "${2}"
-            ;;
-        vendor/bin/hw/dolbycodec2)
-            patchelf --add-needed "libshim.so" "${2}"
-            patchelf --replace-needed libcodec2_hidl@1.0.so libcodec2_hidl@1.0.stock.so "${2}"
             ;;
         vendor/etc/camera/odin_motiontuning.xml)
             sed -i 's/xml=version/xml\ version/g' "${2}"
@@ -77,19 +93,28 @@ function blob_fixup() {
             ;;
         vendor/etc/vintf/manifest/c2_manifest_vendor.xml)
             sed -ni '/ozoaudio/!p' "${2}"
-            ;;
-        vendor/lib/libcodec2_hidl@1.0.stock.so)
-            patchelf --set-soname libcodec2_hidl@1.0.stock.so "${2}"
-            patchelf --replace-needed libcodec2_vndk.so libcodec2_vndk.stock.so "${2}"
-            ;;
-        vendor/lib/libcodec2_vndk.stock.so)
-            patchelf --set-soname libcodec2_vndk.stock.so "${2}"
+            sed -ni '/dolby/!p' "${2}"
             ;;
         vendor/lib64/android.hardware.secure_element@1.0-impl.so)
             "${PATCHELF}" --remove-needed "android.hidl.base@1.0.so" "${2}"
             ;;
         vendor/lib64/hw/camera.qcom.so)
             sed -i "s/\x73\x74\x5F\x6C\x69\x63\x65\x6E\x73\x65\x2E\x6C\x69\x63/\x63\x61\x6D\x65\x72\x61\x5F\x63\x6E\x66\x2E\x74\x78\x74/g" "${2}"
+            "${PATCHELF}" --add-needed "libprocessgroup_shim.so" "${2}"
+            ;;
+        vendor/lib64/hw/camera.xiaomi.so)
+            hexdump -ve '1/1 "%.2X"' "${2}" | sed "s/2100805229070094/210080521F2003D5/g" | xxd -r -p > "${EXTRACT_TMP_DIR}/${1##*/}"
+            mv "${EXTRACT_TMP_DIR}/${1##*/}" "${2}"
+            ;;
+        vendor/lib64/hw/com.qti.chi.override.so)
+            "${PATCHELF}" --add-needed "libprocessgroup_shim.so" "${2}"
+            ;;
+        vendor/lib/hw/audio.primary.lahaina.so \
+        |vendor/lib/libaudioroute_ext.so)
+            "${PATCHELF}" --replace-needed "libaudioroute.so" "libaudioroute-v34.so" "${2}"
+            ;;
+        vendor/lib64/libwvhidl.so)
+            "${PATCHELF}" --add-needed "libcrypto_shim.so" "${2}"
             ;;
     esac
 }
